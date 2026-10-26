@@ -27,7 +27,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <html lang="en" class:list={[{ 'has-intro': intro }]}>
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="Content-Security-Policy" content={CSP_META} />
+    {import.meta.env.PROD && <meta http-equiv="Content-Security-Policy" content={CSP_META} />}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>{pageTitle}</title>
