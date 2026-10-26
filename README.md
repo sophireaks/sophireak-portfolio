@@ -7,16 +7,11 @@
 [![CI](https://github.com/sophireaks/sophireak-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/sophireaks/sophireak-portfolio/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[Live site](https://YOUR-SITE.pages.dev) · [GitHub](https://github.com/sophireaks) · [LinkedIn](https://www.linkedin.com/in/sophireak-soeng-10b668265/) · [TryHackMe](https://tryhackme.com/p/Sophireak.S)
+[Live site](https://sophireaksoeng.dev) · [GitHub](https://github.com/sophireaks) · [LinkedIn](https://www.linkedin.com/in/sophireak-soeng-10b668265/) · [TryHackMe](https://tryhackme.com/p/UnN4meDD)
 
 </div>
 
-<!-- Add screenshots to docs/ then uncomment:
-<p align="center">
-  <img src="docs/hero.png" width="49%" alt="Home page" />
-  <img src="docs/projects.png" width="49%" alt="Project carousel" />
-</p>
--->
+
 
 ## Overview
 

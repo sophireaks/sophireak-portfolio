@@ -1,4 +1,3 @@
-/** Everything personal lives here. Edit this file, not the components. */
 export interface SocialLink {
   readonly label: string;
   readonly href: string;
@@ -15,12 +14,11 @@ export const site = {
     'Portfolio of Sophireak Soeng, software engineer and security researcher based in Phnom Penh. Offensive security and open-source tooling.',
   location: 'Phnom Penh, Cambodia',
   coordinates: { lat: '11.56°N', lng: '104.93°E' },
-  /** Leave empty to hide every email link. */
   email: '',
   availability: 'Open to junior Security Engineer roles',
   links: [
     { label: 'GitHub', href: 'https://github.com/sophireaks' },
-    { label: 'TryHackMe', href: 'https://tryhackme.com/p/Sophireak.S' },
+    { label: 'TryHackMe', href: 'https://tryhackme.com/p/UnN4meDD' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sophireak-soeng-10b668265/' },
   ] as readonly SocialLink[],
   marquee: [
