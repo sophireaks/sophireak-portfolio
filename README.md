@@ -11,8 +11,6 @@
 
 </div>
 
-
-
 ## Overview
 
 A static portfolio built to the standard I would expect from production code:
