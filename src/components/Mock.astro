@@ -1,0 +1,21 @@
+---
+import MockTerminal from './mocks/MockTerminal.astro';
+import MockDashboard from './mocks/MockDashboard.astro';
+import MockPhone from './mocks/MockPhone.astro';
+import MockChat from './mocks/MockChat.astro';
+import MockPhysics from './mocks/MockPhysics.astro';
+import MockInspector from './mocks/MockInspector.astro';
+
+interface Props {
+  kind: 'terminal' | 'dashboard' | 'phone' | 'chat' | 'physics' | 'inspector';
+}
+
+const { kind } = Astro.props;
+---
+
+{kind === 'terminal' && <MockTerminal />}
+{kind === 'dashboard' && <MockDashboard />}
+{kind === 'phone' && <MockPhone />}
+{kind === 'chat' && <MockChat />}
+{kind === 'physics' && <MockPhysics />}
+{kind === 'inspector' && <MockInspector />}

@@ -1,0 +1,43 @@
+{
+  "name": "sophireak-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio of Sophireak Soeng, software engineer and security researcher.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "audit:prod": "npm audit --omit=dev --audit-level=high",
+    "verify": "npm run format:check && npm run lint && npm run check && npm run test && npm run build && npm run check:dist",
+    "check:dist": "node scripts/check-dist.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource/noto-sans-khmer": "^5.3.0",
+    "astro": "^7.4.2",
+    "gsap": "^3.15.0",
+    "split-type": "^0.3.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.5",
+    "eslint": "^10.13.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.2",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.0",
+    "vitest": "^5.0.5"
+  }
+}

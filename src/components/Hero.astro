@@ -1,0 +1,24 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="hero" id="top">
+  <canvas id="dots" aria-hidden="true"></canvas>
+  <p class="intro" id="introText">
+    {site.tagline}
+  </p>
+  <div class="center">
+    <p class="eyebrow" id="eyebrow" data-role={site.role}>
+      {site.role}
+    </p>
+    <h1 class="name" id="name">
+      {site.name}
+    </h1>
+  </div>
+  <span class="coord l">{site.coordinates.lat}</span>
+  <span class="coord r">{site.coordinates.lng}</span>
+  <div class="cue" aria-hidden="true">
+    <span class="label">Scroll</span>
+    <i></i>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+import { site, emailHref } from '../data/site';
+
+const email = emailHref();
+---
+
+<section class="pad" id="services">
+  <div class="svc-head">
+    <div>
+      <span class="label">Services</span>
+      <h2 class="section-title t-anim">Where I can help.</h2>
+    </div>
+    {email !== null && (
+      <a class="ul" href={email}>
+        Contact me
+      </a>
+    )}
+  </div>
+  <ul class="svc">
+    {site.services.map((s) => (
+      <li>
+        <span class="big-l" aria-hidden="true">
+          {s.letter}
+        </span>
+        <h3>{s.title}</h3>
+        <p>{s.text}</p>
+      </li>
+    ))}
+  </ul>
+</section>

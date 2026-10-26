@@ -1,0 +1,31 @@
+---
+---
+
+<div class="win">
+  <div class="bar">
+    <i></i>
+    <i></i>
+    <i></i>
+    <span>lab / request inspector</span>
+  </div>
+  <div class="body">
+    <div class="split2">
+      <div>
+        <p class="dim">REQUEST</p>
+        <p>
+          GET /search?q=<span class="hl">test'</span> HTTP/1.1
+        </p>
+        <p>Host: lab.local</p>
+        <p>Cookie: session=...</p>
+      </div>
+      <div>
+        <p class="dim">RESPONSE</p>
+        <p>HTTP/1.1 500</p>
+        <p class="dim">Content-Type: text/html</p>
+        <p>
+          <span class="hl">unexpected token near "'"</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

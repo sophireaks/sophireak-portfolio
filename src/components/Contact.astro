@@ -1,0 +1,25 @@
+---
+import { site, emailHref } from '../data/site';
+
+const email = emailHref();
+---
+
+<section class="contact" id="contact">
+  <span class="label status">
+    <i></i>
+    {site.availability}
+  </span>
+  <h2 class="t-anim">Let's build something secure.</h2>
+  <div class="links">
+    {email !== null && (
+      <a class="ul" href={email}>
+        Email
+      </a>
+    )}
+    {site.links.map((l) => (
+      <a class="ul" href={l.href} target="_blank" rel="noopener noreferrer">
+        {l.label}
+      </a>
+    ))}
+  </div>
+</section>

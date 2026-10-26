@@ -1,0 +1,32 @@
+---
+import { site } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="brand">{site.name}.</div>
+  <nav aria-label="Footer">
+    <a class="ul" href="/">
+      Home
+    </a>
+    <a class="ul" href="/#about">
+      About
+    </a>
+    <a class="ul" href="/projects/">
+      Projects
+    </a>
+    <a class="ul" href="/#contact">
+      Contact
+    </a>
+  </nav>
+  <div class="meta">
+    <span class="yr">/{String(year).slice(2)}</span>
+    <span class="label">
+      &copy; {year} {site.fullName}
+    </span>
+    <a class="ul" href="#top">
+      Back to top
+    </a>
+  </div>
+</footer>

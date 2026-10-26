@@ -1,0 +1,93 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="pad" id="about">
+  <div class="about">
+    <div class="art">
+      <svg class="scrolling-svg" viewBox="0 0 600 700" role="img" aria-label="Decorative graphic">
+        <defs>
+          <clipPath id="clipc">
+            <circle class="distortion" cx="300" cy="350" r="0"></circle>
+          </clipPath>
+        </defs>
+        <circle
+          class="ring-path"
+          cx="300"
+          cy="350"
+          r="332"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+        ></circle>
+        <g clip-path="url(#clipc)">
+          <g class="svg-image">
+            <rect x="-40" y="-40" width="680" height="780" fill="var(--accent)"></rect>
+            <path
+              d="M0 100H600M0 200H600M0 300H600M0 400H600M0 500H600M0 600H600M100 0V700M200 0V700M300 0V700M400 0V700M500 0V700"
+              stroke="var(--on)"
+              stroke-opacity=".14"
+              stroke-width="1"
+              fill="none"
+            ></path>
+            <text
+              x="300"
+              y="400"
+              text-anchor="middle"
+              font-family="JetBrains Mono Variable, monospace"
+              font-weight="700"
+              font-size="260"
+              fill="var(--on)"
+            >
+              S.
+            </text>
+            <g
+              font-family="JetBrains Mono Variable, monospace"
+              font-size="15"
+              fill="var(--on)"
+              fill-opacity=".8"
+            >
+              <text x="130" y="520">
+                while (alive) &#123;
+              </text>
+              <text x="160" y="546">
+                learn(); build(); break();
+              </text>
+              <text x="130" y="572">
+                &#125;
+              </text>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div>
+      <span class="label">About</span>
+      <h2 class="section-title t-anim">I build software and break it on purpose.</h2>
+      <p class="t-anim">
+        I'm a fresh IT Engineering graduate from the Royal University of Phnom Penh. My roots are in
+        offensive security: penetration testing, learned by doing, with TryHackMe labs and Burp
+        Suite.
+      </p>
+      <p class="t-anim">
+        I write code on both sides of the line: web and Android apps, and open-source security
+        tooling like vscan. The goal is an international career in security engineering.
+      </p>
+      <dl class="facts">
+        {site.facts.map((f) => (
+          <div>
+            <dt class="label">{f.label}</dt>
+            <dd>{f.value}</dd>
+          </div>
+        ))}
+      </dl>
+      <div class="links">
+        {site.links.map((l) => (
+          <a class="ul" href={l.href} target="_blank" rel="noopener noreferrer">
+            {l.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

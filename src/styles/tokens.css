@@ -1,0 +1,86 @@
+/* Registered custom properties let the browser animate theme changes with plain CSS transitions. */
+@property --bg {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #f6f8ff;
+}
+@property --main {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #0c1a4a;
+}
+@property --muted {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #7683ad;
+}
+@property --accent {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #2b50ff;
+}
+@property --on {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ffffff;
+}
+
+:root {
+  --bg: #f6f8ff;
+  --main: #0c1a4a;
+  --muted: #7683ad;
+  --accent: #2b50ff;
+  --on: #ffffff;
+
+  --display: 'JetBrains Mono Variable', ui-monospace, Menlo, Consolas, monospace;
+  --sans: 'JetBrains Mono Variable', ui-monospace, Menlo, Consolas, monospace;
+  --khmer: 'Noto Sans Khmer', 'JetBrains Mono Variable', sans-serif;
+  --pad: 3vw;
+  --ease: cubic-bezier(0.7, 0, 0.2, 1);
+
+  color-scheme: light;
+  transition:
+    --bg 0.35s ease,
+    --main 0.35s ease,
+    --muted 0.35s ease,
+    --accent 0.35s ease,
+    --on 0.35s ease;
+}
+
+:root[data-theme='1'] {
+  --bg: #070a14;
+  --main: #e8edff;
+  --muted: #6f7aa0;
+  --accent: #3d6bff;
+  --on: #ffffff;
+  color-scheme: dark;
+}
+:root[data-theme='2'] {
+  --bg: #050a06;
+  --main: #c9ffd9;
+  --muted: #4a8a5d;
+  --accent: #39ff7a;
+  --on: #04110a;
+  color-scheme: dark;
+}
+:root[data-theme='3'] {
+  --bg: #0a1530;
+  --main: #f4f7ff;
+  --muted: #8d9bbd;
+  --accent: #5ec4ff;
+  --on: #0a1530;
+  color-scheme: dark;
+}
+:root[data-theme='4'] {
+  --bg: #f6f3ee;
+  --main: #1b1b1f;
+  --muted: #8a857c;
+  --accent: #d93214;
+  --on: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    transition: none;
+  }
+}

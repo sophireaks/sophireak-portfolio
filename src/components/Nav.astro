@@ -1,0 +1,17 @@
+---
+import { site } from '../data/site';
+import { THEME_LABELS } from '../lib/themes';
+---
+
+<header class="nav">
+  <a class="logo" href="/" aria-label={`${site.fullName}, home`}>
+    {site.initial}
+  </a>
+  <button class="theme" id="theme" type="button" aria-label="Change color theme">
+    <span id="themeText">{THEME_LABELS[0]}</span>
+  </button>
+  <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">
+    <span class="mt open">MENU</span>
+    <span class="mt close">CLOSE</span>
+  </button>
+</header>

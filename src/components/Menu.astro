@@ -1,0 +1,46 @@
+---
+import { site, emailHref } from '../data/site';
+
+const email = emailHref();
+---
+
+<div class="menu" id="menu" aria-hidden="true" inert>
+  <div class="menu-dim"></div>
+  <div class="menu-panel">
+    <nav class="menu-links" aria-label="Main">
+      <div class="lw">
+        <a href="/" data-roll>
+          Home
+        </a>
+      </div>
+      <div class="lw">
+        <a href="/#about" data-roll>
+          About
+        </a>
+      </div>
+      <div class="lw">
+        <a href="/#works" data-roll>
+          Works
+        </a>
+      </div>
+      <div class="lw">
+        <a href="/#contact" data-roll>
+          Contact
+        </a>
+      </div>
+    </nav>
+    <div class="menu-contact">
+      <span class="label">Contact</span>
+      {email !== null && (
+        <a href={email} class="ul">
+          Email
+        </a>
+      )}
+      {site.links.map((l) => (
+        <a href={l.href} class="ul" target="_blank" rel="noopener noreferrer">
+          {l.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>

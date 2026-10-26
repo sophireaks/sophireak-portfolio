@@ -1,0 +1,59 @@
+---
+import '@fontsource-variable/jetbrains-mono';
+import '@fontsource/noto-sans-khmer/khmer-400.css';
+import '../styles/global.css';
+import { site } from '../data/site';
+import { CSP_META } from '../lib/security';
+import Nav from '../components/Nav.astro';
+import Menu from '../components/Menu.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** True on the home page: enables the hero intro and hides nav until it plays. */
+  intro?: boolean;
+}
+
+const { title, description = site.description, intro = false } = Astro.props;
+const pageTitle =
+  title === undefined
+    ? `${site.fullName} | Software Engineer and Security Researcher`
+    : `${title} | ${site.fullName}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en" class:list={[{ 'has-intro': intro }]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content={CSP_META} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical.href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="color-scheme" content="light dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+    <meta name="twitter:card" content="summary" />
+    <script is:inline src="/early.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">
+      Skip to content
+    </a>
+    <Nav />
+    <Menu />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import '../scripts/main';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+---
+import { site } from '../data/site';
+
+// Four copies, animated by -50%, gives a seamless loop on wide screens.
+const items = [...site.marquee, ...site.marquee, ...site.marquee, ...site.marquee];
+---
+
+<div class="band" aria-hidden="true">
+  <div class="band-track">
+    {items.map((t) => (
+      <span>{t}</span>
+    ))}
+  </div>
+</div>

@@ -1,0 +1,50 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { site } from '../../data/site';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, summary, tags, repo, demo } = entry.data;
+const githubProfile = site.links.find((l) => l.label === 'GitHub');
+---
+
+<Base title={title} description={summary}>
+  <article class="page">
+    <a class="ul back" href="/projects/">
+      All projects
+    </a>
+    <h1>{title}</h1>
+    <p class="lede">{summary}</p>
+    <ul class="chips">
+      {tags.map((t) => (
+        <li>{t}</li>
+      ))}
+    </ul>
+    <div class="prose">
+      <Content />
+    </div>
+    <div class="links">
+      {repo !== undefined && (
+        <a class="ul" href={repo} target="_blank" rel="noopener noreferrer">
+          Source
+        </a>
+      )}
+      {demo !== undefined && (
+        <a class="ul" href={demo} target="_blank" rel="noopener noreferrer">
+          Demo
+        </a>
+      )}
+      {repo === undefined && githubProfile !== undefined && (
+        <a class="ul" href={githubProfile.href} target="_blank" rel="noopener noreferrer">
+          More on GitHub
+        </a>
+      )}
+    </div>
+  </article>
+</Base>

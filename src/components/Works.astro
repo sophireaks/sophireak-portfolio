@@ -1,0 +1,75 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Mock from './Mock.astro';
+
+interface Props {
+  projects: CollectionEntry<'projects'>[];
+}
+
+const { projects } = Astro.props;
+const count = String(projects.length).padStart(2, '0');
+const first = projects[0];
+---
+
+<section class="showcase" id="works" aria-label="Selected projects">
+  <div class="stage">
+    <div class="stage-top">
+      <span class="label">Selected projects</span>
+      <span class="label" id="count" aria-hidden="true">
+        01 / {count}
+      </span>
+    </div>
+    <div class="scene">
+      <ol class="ring" id="ring">
+        {projects.map((p) => (
+          <li
+            class="card"
+            data-title={p.data.title}
+            data-desc={p.data.summary}
+            data-tags={p.data.tags.join(' / ')}
+            data-href={`/projects/${p.id}/`}
+          >
+            <Mock kind={p.data.mock} />
+            <div class="card-cap">
+              <a href={`/projects/${p.id}/`}>{p.data.title}</a>
+              <p>{p.data.summary}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+    <div class="info" aria-live="polite">
+      <button class="pn prev btn-disabled" id="prev" type="button" aria-label="Previous project">
+        <span data-roll>Prev</span>
+      </button>
+      <div class="pj">
+        <span class="label">Scroll</span>
+        <h2 class="pj-title">
+          <span id="pjText">{first?.data.title}</span>
+          <i class="mask" id="pjMask"></i>
+        </h2>
+        <p class="pj-desc" id="pjDesc">
+          {first?.data.summary}
+        </p>
+        <p class="pj-tags" id="pjTags">
+          {first?.data.tags.join(' / ')}
+        </p>
+        <a
+          class="ul more"
+          id="pjLink"
+          href={first === undefined ? '/projects/' : `/projects/${first.id}/`}
+        >
+          See more
+        </a>
+      </div>
+      <button class="pn next" id="next" type="button" aria-label="Next project">
+        <span data-roll>Next</span>
+      </button>
+    </div>
+    <p class="more-link">
+      <a class="ul" href="/projects/">
+        All projects
+      </a>
+    </p>
+  </div>
+</section>
