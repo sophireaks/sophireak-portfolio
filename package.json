@@ -24,7 +24,7 @@
   "dependencies": {
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "@fontsource/noto-sans-khmer": "^5.3.0",
-    "astro": "^7.4.2",
+    "astro": "^7.4.7",
     "gsap": "^3.15.0",
     "split-type": "^0.3.4"
   },
